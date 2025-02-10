@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        
+    </head> 
+    <body>
+        <div id="message-for-you"class="wrapper">
+            <div class="typing-demo">
+              Will you be my valentine excuse...?
+            </div>
+        </div>
+        
+        <div id="heart-wrapper" class="heart__wrapper">
+            
+            <div class="heart__sun"></div>
+            <div class="heart__shadow"></div>
+            
+            <div id="heart" class="heart" onmouseover="showMessageBubble(true); bubbleMessage(messagesDictionary.inactiveMessage);" onmouseleave="showMessageBubble(false)">
+              <div class="heart__lines"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="heart__icon" width="5rem" height="5rem" viewBox="0 0 24 24" fill="none">
+                <defs>
+                  <radialGradient id="RadialGradient" cx="0.85" cy="0.1" r="0.15">
+                    <stop offset="0%" stop-color="#ffaea0" />
+                    <stop offset="100%" stop-color="#ffaea0" />
+                    <stop offset="100%" stop-color="#ff7d66" />
+                  </radialGradient>
+                </defs>
+                <title id="button-label">Je t'aime bien</title>
+                <path aria-labelledby="button-label" d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" stroke="#FFEBEE" stroke-width="1" fill="#FFF" />
+              </svg>
+              <div class="heart__eyes"></div>
+              <div class="heart__blush"></div>
+              <div class="heart__mouth"></div>
+              <div class="heart__arms"></div>
+              <div class="heart__legs"></div>
+            </div>
+        </div>
+        
+        <div id="message-bubble" >
+            <!-- <div class="chat-thread"> -->
+                <div class="message">
+                    <div class="message-content">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p id="my-message" >Ahihi ❤️</p>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+
+        <!-- class="button-wrapper"  -->
+        <div id="yes-no-options">
+            <button id = "yesButton" onclick="nextPage()" onmouseover="bubbleMessage(messagesDictionary.yesMessage)">Yasss 🐶</button>
+            <button id="noButton" onmouseover="moveButton()" onclick="moveButton()">Nah 🫠</button>
+
+            <!-- <button id = "yesButton" onclick="nextPage()">Yasss 🐶</button>
+            <button id="noButton" onmouseover="moveButton()" onclick="moveButton()">Nah 🫠</button> -->
+        </div>
+        <script src="./heart.js"></script>
+    </body> 
+</html>

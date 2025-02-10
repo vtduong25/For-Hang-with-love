@@ -1,0 +1,569 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:500");
+html {
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#heart-wrapper {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heart {
+  position: relative;
+  cursor: pointer;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+}
+.heart__wrapper {
+  position: relative;
+  top: -20%;
+}
+.heart__sun {
+  position: absolute;
+  top: -2.5rem;
+  left: -0.5rem;
+  z-index: -1;
+  height: -1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.5s ease;
+}
+.heart__shadow {
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  z-index: -1;
+  width: 3rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 1.4rem 0 0 rgb(255, 209.5, 216.325);
+  transition: box-shadow 0.5s ease;
+}
+.heart__lines {
+  position: absolute;
+  top: -0.6rem;
+  right: 0.2rem;
+  width: 0.2rem;
+  height: 0.8rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 219.7, 224.995);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.heart__lines:before, .heart__lines:after {
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 0.8rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 219.7, 224.995);
+  transform-origin: 0.1rem 0.7rem;
+  transition: height 0.5s ease;
+}
+.heart__lines:before {
+  top: 0.25rem;
+  left: 0.5rem;
+  transform: rotate(30deg);
+}
+.heart__lines:after {
+  top: 0.5rem;
+  left: 1rem;
+  transform: rotate(60deg);
+}
+.heart__icon path {
+  position: relative;
+}
+.heart__eyes {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 3rem;
+  height: 1rem;
+  transition: all 0.1s ease;
+}
+.heart__eyes:before, .heart__eyes:after {
+  content: "";
+  width: 1rem;
+  height: 0.2rem;
+  background-color: rgb(255, 219.7, 224.995);
+  transition: all 0.1s ease;
+}
+.heart__mouth {
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+  width: 1rem;
+  height: 0.2rem;
+  background-color: rgb(255, 219.7, 224.995);
+  transition: all 0.2s ease;
+}
+.heart__arms {
+  position: absolute;
+  top: 2rem;
+  left: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 4.2rem;
+  height: 1.5rem;
+}
+.heart__arms:before, .heart__arms:after {
+  content: "";
+  width: 0.2rem;
+  height: 0;
+  border-radius: 0 0 0.2rem 0.2rem;
+  transform-origin: 0.1rem 0.2rem;
+}
+.heart__legs {
+  position: absolute;
+  top: 3.6rem;
+  left: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 2rem;
+  height: 1rem;
+}
+.heart__legs:before, .heart__legs:after {
+  content: "";
+  width: 0.2rem;
+  height: 0;
+  border-radius: 0 0 0.2rem 0.2rem;
+  transform-origin: 0.1rem 0rem;
+}
+.heart:not(.heart--active):hover {
+  transform-origin: center bottom;
+  animation: swing ease-in-out infinite;
+  animation-duration: 2s;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+.heart__wrapper--active .heart__sun {
+  background-color: #f5fccd;
+}
+.heart__wrapper--active .heart__shadow {
+  animation: shadow;
+  animation-duration: 1.5s;
+}
+@keyframes shadow {
+  40%, 85% {
+    box-shadow: 0 1.4rem 0 -0.1rem rgb(255, 209.5, 216.325);
+  }
+}
+.heart--active {
+  animation: leap;
+  animation-duration: 1.5s;
+  pointer-events: none;
+}
+@keyframes leap {
+  40%, 85% {
+    transform: translate(0.2rem, -3rem) rotate(-25deg);
+  }
+}
+.heart--active .heart__lines {
+  animation: lines;
+  animation-duration: 1.3s;
+  animation-delay: 0.2s;
+  background-color: #000038;
+}
+@keyframes lines {
+  20%, 80% {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+}
+.heart--active .heart__lines:before, .heart--active .heart__lines:after {
+  background-color: #000038;
+}
+.heart--active .heart__icon path {
+  fill: url(#RadialGradient);
+  stroke: #ff7d66;
+}
+@supports (-webkit-hyphens: none) {
+  .heart--active .heart__icon path {
+    fill: #ff7d66;
+  }
+}
+.heart--active .heart__eyes {
+  width: 2.5rem;
+  padding: 0 0.25rem;
+}
+.heart--active .heart__eyes:before, .heart--active .heart__eyes:after {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 30%, #fff 15%, #000038 15%, #000038);
+}
+.heart--active .heart__blush {
+  position: absolute;
+  top: 2.5rem;
+  left: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 2.5rem;
+  height: 1rem;
+}
+.heart--active .heart__blush:before, .heart--active .heart__blush:after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #f58bc0;
+}
+.heart--active .heart__mouth {
+  height: 0.5rem;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #000038;
+  overflow: hidden;
+}
+.heart--active .heart__mouth:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 60%;
+  height: 50%;
+  border-radius: 3rem 3rem 0 0;
+  background-color: #f58bc0;
+}
+.heart--active .heart__arms:before, .heart--active .heart__arms:after {
+  height: 1.5rem;
+  background-color: #ff7d66;
+  transition-propery: transform, height;
+  transition-duration: 0.1s;
+}
+.heart--active .heart__arms:before {
+  animation: leftArm;
+  animation-duration: 1.5s;
+}
+@keyframes leftArm {
+  0% {
+    transform: rotate(0deg);
+  }
+  40%, 70% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+.heart--active .heart__arms:after {
+  animation: rightArm;
+  animation-duration: 1.5s;
+}
+@keyframes rightArm {
+  0% {
+    transform: rotate(0deg);
+  }
+  40%, 80% {
+    transform: rotate(-160deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+.heart--active .heart__legs:before, .heart--active .heart__legs:after {
+  height: 1rem;
+  background-color: #ff7d66;
+  transition-propery: transform, height;
+  transition-duration: 0.6s;
+}
+.heart--active .heart__legs:before {
+  animation: leftLeg;
+  animation-duration: 1.5s;
+}
+@keyframes leftLeg {
+  0% {
+    transform: rotate(0deg);
+  }
+  40%, 80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+.heart--active .heart__legs:after {
+  animation: leftRight;
+  animation-duration: 1.5s;
+}
+@keyframes leftRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  40%, 80% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+#message-bubble {
+  visibility: hidden;
+  position: fixed;
+  top: 25%;
+  left: 53%;
+  transform: translate(-26%, -53%);
+}
+#message-bubble.show {
+  visibility: visible;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+#message-bubble.show p {
+  margin: 0;
+  animation: 0.5s appear 0s forwards;
+  font-family: "Comic Sans MS", cursive;
+}
+#message-bubble.show .typing-indicator {
+  will-change: transform;
+  display: flex;
+  animation: 0s disappear 0.5s forwards;
+  height: 100%;
+}
+#message-bubble.show .typing-indicator span {
+  height: 10px;
+  width: 12px;
+  margin: 0.5rem 0;
+  background-color: #9E9EA1;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+#message-bubble.show .typing-indicator span:nth-of-type(1) {
+  animation: 0.5s blink infinite 0s;
+}
+#message-bubble.show .typing-indicator span:nth-of-type(2) {
+  animation: 0.5s blink infinite 0.3333s;
+}
+#message-bubble.show .typing-indicator span:nth-of-type(3) {
+  animation: 0.5s blink infinite 0.6666s;
+}
+#message-bubble.show .typing-indicator span:nth-of-type(4) {
+  animation: 0.5s blink infinite 0.9999s;
+}
+
+.message {
+  display: flex;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+.message + .message {
+  margin-top: 0;
+}
+.message .message-content {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0.2em 1em;
+  background: #FFEBEE;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.chat-actions {
+  text-align: center;
+  align-items: center;
+}
+.chat-actions button {
+  margin-top: 1rem;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  99% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  100% {
+    opacity: 1;
+    width: auto;
+    height: auto;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#message-for-you {
+  visibility: hidden;
+  position: fixed;
+  top: 45%;
+}
+#message-for-you.show {
+  visibility: visible;
+}
+#message-for-you.show .wrapper {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}
+#message-for-you.show .typing-demo {
+  width: 35ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+#yes-no-options {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+}
+#yes-no-options.show {
+  visibility: visible;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+#yes-no-options.show #yesButton {
+  position: fixed;
+  top: 55%;
+  margin-left: 0;
+  margin-right: 6.5em;
+  b-webkit-appearance: none;
+  background: -webkit-gradient(to right, #76D7C4 0%, #fceeb5 50%, #E91E63 100%);
+  background: linear-gradient(to right, #76D7C4 0%, #fceeb5 50%, #E91E63 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font: 1.2em Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2.5rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 7rem;
+}
+#yes-no-options.show #noButton {
+  position: fixed;
+  top: 55%;
+  margin-left: 6.5em;
+  margin-right: 0;
+  b-webkit-appearance: none;
+  background: -webkit-gradient(to right, #F1948A 0%, #fceeb5 50%, #FF8A65 100%);
+  background: linear-gradient(to right, #F1948A 0%, #fceeb5 50%, #FF8A65 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font: 1.2em Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2.5rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 7rem;
+}
+#yes-no-options.show button:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 5s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

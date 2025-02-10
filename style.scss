@@ -1,0 +1,656 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:500');
+
+//palette
+$green: #76D7C4;
+$dark-peach: #E91E63;
+$light-peach: #F1948A;
+$peach: #FF8A65;
+$sand: #fceeb5;
+$white: #fff;
+
+$black: #000038;
+$white: #fff;
+$red: #ff7d66;
+$yellow: #f5fccd;
+$pink: #f58bc0;
+$bubblePink:#FFEBEE;
+$mediumPink:darken($bubblePink,3%);//#F06292;
+$grey: darken($bubblePink,5%);//#bbb;
+
+//heart
+html {
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#heart-wrapper {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.heart {
+  $component-class: &;
+  position: relative;
+  cursor: pointer;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  &__wrapper {
+    position: relative;
+    top: -20%;
+  }
+  &__sun {
+    position: absolute;
+    top: -2.5rem;
+    left: -0.5rem;
+    z-index: -1;
+    height: -1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.5s ease;
+  }
+  &__shadow {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    z-index: -1;
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 1.4rem 0 0 $grey;
+    transition: box-shadow 0.5s ease;
+  }
+  &__lines {
+    position: absolute;
+    top: -0.6rem;
+    right: 0.2rem;
+    width: 0.2rem;
+    height: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: $mediumPink;// $grey;
+    opacity: 0;
+    transition: all 0.5s ease;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0.2rem;
+      height: 0.8rem;
+      border-radius: 0.5rem;
+      background-color: $mediumPink;//$grey;
+      transform-origin: 0.1rem 0.7rem;
+      transition: height 0.5s ease;
+    }
+    &:before {
+      top: 0.25rem;
+      left: 0.5rem;
+      transform: rotate(30deg);
+    }
+    &:after {
+      top: 0.5rem;
+      left: 1rem;
+      transform: rotate(60deg);
+    }
+  }
+  &__icon path {
+    position: relative;
+  }
+  &__eyes {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 3rem;
+    height: 1rem;
+    transition: all 0.1s ease;
+    &:before,
+    &:after {
+      content: "";
+      width: 1rem;
+      height: 0.2rem;
+      background-color: $mediumPink;//$grey;
+      transition: all 0.1s ease;
+    }
+  }
+  &__mouth {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    width: 1rem;
+    height: 0.2rem;
+    background-color: $mediumPink;//$grey;
+    transition: all 0.2s ease;
+  }
+  &__arms {
+    position: absolute;
+    top: 2rem;
+    left: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 4.2rem;
+    height: 1.5rem;
+    &:before,
+    &:after {
+      content: "";
+      width: 0.2rem;
+      height: 0;
+      border-radius: 0 0 0.2rem 0.2rem;
+      transform-origin: 0.1rem 0.2rem;
+    }
+  }
+  &__legs {
+    position: absolute;
+    top: 3.6rem;
+    left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 2rem;
+    height: 1rem;
+    &:before,
+    &:after {
+      content: "";
+      width: 0.2rem;
+      height: 0;
+      border-radius: 0 0 0.2rem 0.2rem;
+      transform-origin: 0.1rem 0rem;
+    }
+  }
+  &:not(&--active):hover {
+    @keyframes swing {
+      0%{
+        transform: rotate(8deg);
+      }
+      50% {
+        transform: rotate(-8deg);
+      }
+      100% {
+        transform: rotate(8deg);
+      }
+    }
+    transform-origin: center bottom;
+    animation: swing ease-in-out infinite;
+    animation-duration: 2s;
+  }
+  &__wrapper--active {
+    #{$component-class}__sun {
+      background-color: $yellow;
+    }
+    #{$component-class}__shadow {
+      @keyframes shadow {
+        40%,
+        85% {
+          box-shadow: 0 1.4rem 0 -0.1rem $grey;
+        }
+      }
+      animation: shadow;
+      animation-duration: 1.5s;
+    }
+  }
+  &--active {
+    @keyframes leap {
+      40%,
+      85% {
+        transform: translate(0.2rem, -3rem) rotate(-25deg);
+      }
+    }
+    animation: leap;
+    animation-duration: 1.5s;
+    pointer-events: none;
+    #{$component-class} {
+      &__lines {
+        @keyframes lines {
+          20%,
+          80% {
+            opacity: 0;
+          }
+          40%,
+          60% {
+            opacity: 1;
+          }
+        }
+        animation: lines;
+        animation-duration: 1.3s;
+        animation-delay: 0.2s;
+        background-color: $black;
+        &:before,
+        &:after {
+          background-color: $black;
+        }
+      }
+      &__icon {
+        path {
+          fill: url(#RadialGradient);
+          stroke: $red;
+          @supports (-webkit-hyphens: none) {
+            // Safari 9+
+            fill: $red;
+          }
+        }
+      }
+      &__eyes {
+        width: 2.5rem;
+        padding: 0 0.25rem;
+        &:before,
+        &:after {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background: radial-gradient(
+            circle at 70% 30%,
+            $white 15%,
+            $black 15%,
+            $black
+          );
+        }
+      }
+      &__blush {
+        position: absolute;
+        top: 2.5rem;
+        left: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 2.5rem;
+        height: 1rem;
+        &:before,
+        &:after {
+          content: "";
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background-color: $pink;
+        }
+      }
+      &__mouth {
+        height: 0.5rem;
+        border-radius: 0 0 2rem 2rem;
+        background-color: $black;
+        overflow: hidden;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 20%;
+          width: 60%;
+          height: 50%;
+          border-radius: 3rem 3rem 0 0;
+          background-color: $pink;
+        }
+      }
+      &__arms {
+        &:before,
+        &:after {
+          height: 1.5rem;
+          background-color: $red;
+          transition-propery: transform, height;
+          transition-duration: 0.1s;
+        }
+        &:before {
+          @keyframes leftArm {
+            0% {
+              transform: rotate(0deg);
+            }
+            40%,
+            70% {
+              transform: rotate(20deg);
+            }
+            100% {
+              transform: rotate(-10deg);
+            }
+          }
+          animation: leftArm;
+          animation-duration: 1.5s;
+        }
+        &:after {
+          @keyframes rightArm {
+            0% {
+              transform: rotate(0deg);
+            }
+            40%,
+            80% {
+              transform: rotate(-160deg);
+            }
+            100% {
+              transform: rotate(-20deg);
+            }
+          }
+          animation: rightArm;
+          animation-duration: 1.5s;
+        }
+      }
+      &__legs {
+        &:before,
+        &:after {
+          height: 1rem;
+          background-color: $red;
+          transition-propery: transform, height;
+          transition-duration: 0.6s;
+        }
+        &:before {
+          @keyframes leftLeg {
+            0% {
+              transform: rotate(0deg);
+            }
+            40%,
+            80% {
+              transform: rotate(-10deg);
+            }
+            100% {
+              transform: rotate(10deg);
+            }
+          }
+          animation: leftLeg;
+          animation-duration: 1.5s;
+        }
+        &:after {
+          @keyframes leftRight {
+            0% {
+              transform: rotate(0deg);
+            }
+            40%,
+            80% {
+              transform: rotate(30deg);
+            }
+            100% {
+              transform: rotate(-10deg);
+            }
+          }
+          animation: leftRight;
+          animation-duration: 1.5s;
+        }
+      }
+    }
+  }
+}
+
+
+//Bubble chat
+
+// Chat Bubble Animation Mixin
+// @mixin animation--fadedown($delay) {
+//   animation: fadeIn 1s ease-in-out;
+//   animation-iteration-count: 1;
+//   animation-fill-mode: forwards;
+//   animation-delay: #{$delay}s;
+// }
+
+@mixin chat-thread-animation($delay) {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: #{$delay}s;
+  //@include animation--fadedown($delay);
+
+  p {
+    margin: 0;
+    animation: 0.5s appear 0s forwards;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  .typing-indicator {
+    $ti-color-bg: #e9eeef;
+    will-change: transform;
+    display: flex;
+    animation: 0s disappear 0.5s forwards;
+    height: 100%;
+
+    span {
+      height: 10px;
+      width: 12px;
+      margin: 0.5rem 0;
+      background-color: #9E9EA1;
+      display: block;
+      border-radius: 50%;
+      opacity: 0.4;
+
+      &:nth-of-type(1) {
+        animation: 0.5s blink infinite 0s;
+      }
+      &:nth-of-type(2) {
+        animation: 0.5s blink infinite 0.3333s;
+      }
+      &:nth-of-type(3) {
+        animation: 0.5s blink infinite 0.6666s;
+      }
+      &:nth-of-type(4) {
+        animation: 0.5s blink infinite 0.9999s;
+      }
+    }
+  }
+}
+
+#message-bubble {
+  visibility: hidden;
+  position: fixed;
+  top: 25%;
+  left: 53%;
+  transform: translate(-26%, -53%);
+  &.show {
+    visibility: visible;
+    @include chat-thread-animation(0);
+    
+  }
+}
+
+.message {
+  $message-color-bg: $bubblePink;
+  display: flex;
+  margin: 0.5rem 0;
+  width: 100%;
+
+  // Messages sitting side-by-side
+  &+ .message {
+    margin-top: 0;
+  }
+
+  .message-content {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0.2em 1em;
+    background: $message-color-bg;
+    border-radius: 20px;
+    width: 100%;
+  }
+}
+
+.chat-actions {
+  text-align: center;
+  align-items: center;
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+// ANIMATIONS START
+@keyframes appear {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  99% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  100% {
+    opacity: 1;
+    width: auto;
+    height: auto;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+//Question Typing
+@mixin typing-animation() {
+  .wrapper {
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    position:fixed;
+    //top: 16%;
+  }
+  
+  .typing-demo {
+    width: 35ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+}
+
+#message-for-you{
+  visibility: hidden;
+  position: fixed;
+  top: 45%;
+  &.show {
+    visibility: visible;
+    @include typing-animation();
+  }
+}
+
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+//Yes No Buttons
+// Define the fade-in animation mixin
+@mixin fade-in($duration) {
+  animation: fadeIn $duration ease-in-out forwards;
+}
+@mixin button-position($margin-left, $margin-right,$start-color,$mid-color,$end-color) {
+  position: fixed;
+  top: 55%;
+  // left: $left;
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  b-webkit-appearance: none;  
+  background: -webkit-gradient(to right,$start-color 0%,$mid-color 50%,$end-color 100%);
+  background: linear-gradient(to right,$start-color 0%,$mid-color 50%,$end-color 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  color: $white;
+  cursor: pointer;
+  font: 1.2em Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2.5rem;
+  letter-spacing: .05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 7rem;
+}
+
+#yes-no-options{
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  &.show {
+    // position: fixed;
+    // top: 55%;
+    visibility: visible;
+    @include fade-in(0.5s);
+    #yesButton{
+      @include button-position(0,6.5em,$green,$sand,$dark-peach);
+    }
+    #noButton{
+      @include button-position(6.5em,0,$light-peach ,$sand,$peach);
+    }
+    button {
+      $component-class: &;
+      &:hover {
+        animation-name: gradient;
+        -webkit-animation-name: gradient;
+        animation-duration: 5s;
+        -webkit-animation-duration: s;
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+      }   
+    }
+  }
+    
+
+    
+
+   
+}  
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%}
+  100% {
+    background-position: 100%
+  }}

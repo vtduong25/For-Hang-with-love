@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffeaf1;
+}
+
+.st0 {
+  fill: #F4EFF3;
+}
+
+.st1 {
+  opacity: 0.3;
+}
+
+.st2 {
+  fill: #5C234E;
+}
+
+.st3 {
+  fill: #883277;
+}
+
+.st4 {
+  fill: none;
+  stroke: #007185;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st5 {
+  fill: #983D82;
+}
+
+.st6 {
+  fill: #E5004E;
+}
+
+.st7 {
+  fill: #EB584D;
+}
+
+.st8 {
+  fill: #FFCE00;
+}
+
+.st9 {
+  display: none;
+  fill: #5C234E;
+  stroke: #5C234E;
+  stroke-miterlimit: 10;
+}
+
+.st10 {
+  fill: none;
+  stroke: #5C234E;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st11 {
+  fill: none;
+  stroke: #5C234E;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st12 {
+  display: none;
+}
+
+.st13 {
+  display: inline;
+  fill: #5C234E;
+}
+
+.st14 {
+  display: inline;
+  fill: none;
+  stroke: #5C234E;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.st15 {
+  stroke-width: 8;
+}
+
+.st16 {
+  display: inline;
+  fill: none;
+  stroke: #5C234E;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+
+.st18 {
+  fill: #007185;
+}
+
+.st19 {
+  opacity: 0.75;
+  fill: #6AB187;
+}
+
+.st17 {
+  opacity: 0.5;
+  fill: #FFFFFF;
+}
+
+.st20 {
+  fill: #FBE1CB;
+}
+
+.st21 {
+  fill: #e49a05;
+  opacity: 0.5;
+}
+
+.st22 {
+  fill: #A1408E;
+}
+
+.st23 {
+  fill: #C88BBC;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+svg {
+  width: 600px;
+  height: 600px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-family: "Comfortaa", sans-serif;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+button#btn-happy {
+  background-color: #eb584d;
+}
+button#btn-happy:hover {
+  background-color: rgb(229.8484848485, 44.9848484848, 31.1515151515);
+}
+button#btn-cool {
+  background-color: #007185;
+}
+button#btn-cool:hover {
+  background-color: rgb(0, 69.6691729323, 82);
+}
+button#btn-sexy {
+  background-color: #e5004e;
+}
+button#btn-sexy:hover {
+  background-color: rgb(178, 0, 60.6288209607);
+}
+button#btn-crazy {
+  background-color: #883277;
+}
+button#btn-crazy:hover {
+  background-color: rgb(98.7096774194, 36.2903225806, 86.3709677419);
+}
+
+button:last-child {
+  margin-right: 0;
+}
+
+button:focus {
+  outline: none;
+  border: 0;
+}
+
+body {
+  background: #FBD4C5;
+}
+
+.word-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+.word-container h1:nth-child(1) {
+  color: #355c7d;
+  font-family: "Fira Code", monospace;
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0 0 0 35%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: type 2s steps(40, end) forwards;
+}
+.word-container h1:nth-child(2) {
+  opacity: 0;
+  font-family: "Work Sans", sans-serif;
+  margin: 0 auto;
+  background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
+  font-weight: 800;
+  font-size: 100px;
+  width: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  animation: shring-animation 2.2s steps(40, end) 2s forwards, blink 0.5s step-end infinite alternate;
+}
+
+@keyframes shring-animation {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    background-position: 0 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+  50% {
+    background-position: 150px 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+  100% {
+    background-position: 400px 0;
+    opacity: 1;
+    border-right: 1px solid orange;
+  }
+}
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  1%, 99% {
+    border-right: 1px solid orange;
+  }
+  100% {
+    border-right: none;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/*# sourceMappingURL=yes.css.map */

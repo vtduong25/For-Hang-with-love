@@ -1,242 +1,464 @@
 body {
-  margin: 0;
-  width: 100vw;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  background-color: #ffeaf1;
-}
-
-.st0 {
-  fill: #F4EFF3;
-}
-
-.st1 {
-  opacity: 0.3;
-}
-
-.st2 {
-  fill: #5C234E;
-}
-
-.st3 {
-  fill: #883277;
-}
-
-.st4 {
-  fill: none;
-  stroke: #007185;
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-
-.st5 {
-  fill: #983D82;
-}
-
-.st6 {
-  fill: #E5004E;
-}
-
-.st7 {
-  fill: #EB584D;
-}
-
-.st8 {
-  fill: #FFCE00;
-}
-
-.st9 {
-  display: none;
-  fill: #5C234E;
-  stroke: #5C234E;
-  stroke-miterlimit: 10;
-}
-
-.st10 {
-  fill: none;
-  stroke: #5C234E;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-
-.st11 {
-  fill: none;
-  stroke: #5C234E;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-
-.st12 {
-  display: none;
-}
-
-.st13 {
-  display: inline;
-  fill: #5C234E;
-}
-
-.st14 {
-  display: inline;
-  fill: none;
-  stroke: #5C234E;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-
-.st15 {
-  stroke-width: 8;
-}
-
-.st16 {
-  display: inline;
-  fill: none;
-  stroke: #5C234E;
-  stroke-width: 6;
-  stroke-miterlimit: 10;
-}
-
-.st18 {
-  fill: #007185;
-}
-
-.st19 {
-  opacity: 0.75;
-  fill: #6AB187;
-}
-
-.st17 {
-  opacity: 0.5;
-  fill: #FFFFFF;
-}
-
-.st20 {
-  fill: #FBE1CB;
-}
-
-.st21 {
-  fill: #e49a05;
-  opacity: 0.5;
-}
-
-.st22 {
-  fill: #A1408E;
-}
-
-.st23 {
-  fill: #C88BBC;
-}
-
-.container {
-  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  overflow: hidden;
+  background-color: #FFEBEE !important;
 }
 
-svg {
-  width: 600px;
-  height: 600px;
+/******FLIP******/
+#flip-card-message.visible {
+  visibility: visible;
+  animation: fadeInCard 2.2s forwards, gradientMove 5s ease-in-out 2.2s infinite;
 }
 
-.buttons {
+.flip-card {
+  text-align: center;
+  visibility: hidden;
+  background-color: transparent;
+  width: 328px;
+  height: 443px;
+  margin: auto;
+  perspective: 1000px;
+  border-radius: 8px;
+  font-family: "Crete round";
+  color: #d12d36;
+  font-size: 3rem;
+  position: fixed;
+  top: 35%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  background-size: 66px 66px;
+}
+.flip-card-inner #pikaText {
+  visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  align-items: left;
+}
+.flip-card:hover .flip-card-inner #pikaText {
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 500px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
 }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  color: white;
-  text-transform: uppercase;
-  margin: 0 10px 10px 0;
-  cursor: pointer;
-  letter-spacing: 1px;
-  font-size: 20px;
-  font-family: "Comfortaa", sans-serif;
-  border-radius: 4px;
-  transition: all 0.25s ease;
-}
-button#btn-happy {
-  background-color: #eb584d;
-}
-button#btn-happy:hover {
-  background-color: rgb(229.8484848485, 44.9848484848, 31.1515151515);
-}
-button#btn-cool {
-  background-color: #007185;
-}
-button#btn-cool:hover {
-  background-color: rgb(0, 69.6691729323, 82);
-}
-button#btn-sexy {
-  background-color: #e5004e;
-}
-button#btn-sexy:hover {
-  background-color: rgb(178, 0, 60.6288209607);
-}
-button#btn-crazy {
-  background-color: #883277;
-}
-button#btn-crazy:hover {
-  background-color: rgb(98.7096774194, 36.2903225806, 86.3709677419);
+.flip-card-front {
+  top: 0%;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  box-shadow: 5px 5px 15px #bbb; /* Shadow */
 }
 
-button:last-child {
-  margin-right: 0;
+.flip-card-back {
+  background-color: #2980b9;
+  color: #FFECB3;
+  transform: rotateY(180deg);
 }
 
-button:focus {
-  outline: none;
-  border: 0;
+/******CARD LETTER AND SUIT******/
+.a-bottom {
+  transform: rotate(180deg);
 }
 
-body {
-  background: #FBD4C5;
+.heart {
+  background-color: #d12d36;
+  display: inline-block;
+  height: 20px;
+  margin: 0 10px;
+  transform: rotate(-45deg);
+  width: 20px;
 }
 
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #ff6d63;
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+  background-color: #e84338;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.heart.top {
+  position: relative;
+  top: -40px;
+}
+
+.heart.bottom {
+  transform: rotate(135deg);
+  position: relative;
+  top: 5px;
+}
+
+.naipe-top {
+  position: relative;
+  left: 25px;
+}
+
+.naipe-bottom {
+  position: relative;
+  top: 300px;
+  left: 227px;
+}
+
+#big-heart {
+  position: relative;
+  top: -40px;
+  left: -68px;
+  place-items: center;
+}
+#big-heart div, #big-heart ul, #big-heart span {
+  display: block;
+  position: absolute;
+  margin: auto;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+#big-heart .brown {
+  background-color: #452211;
+}
+#big-heart .yellow {
+  background-color: #ffd814;
+}
+#big-heart .yellow-dark {
+  background-color: #e0a100;
+}
+#big-heart .wrapper {
+  height: 450px;
+  width: 300px;
+}
+#big-heart .pikachu {
+  top: auto;
+  height: 65%;
+  width: 140px;
+}
+#big-heart .pikachu::before {
+  position: absolute;
+  content: "";
+  background: rgba(0, 0, 0, 0.15);
+  height: 10px;
+  width: 90%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 95px;
+  border-radius: 50%;
+}
+#big-heart .pikachu .head {
+  bottom: auto;
+  height: 120px;
+  width: 120px;
+  z-index: 3;
+}
+#big-heart .pikachu .head .face {
+  width: 120px;
+  height: 70px;
+  top: auto;
+  border-radius: 40px 40px 30px 30px;
+  z-index: 2;
+}
+#big-heart .pikachu .head .face .eye {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  bottom: auto;
+  top: 28px;
+  -webkit-animation: pika-blink 4s infinite;
+}
+#big-heart .pikachu .head .face .eye.left {
+  right: auto;
+  left: 32px;
+}
+#big-heart .pikachu .head .face .eye.right {
+  left: auto;
+  right: 32px;
+}
+#big-heart .pikachu .head .face .mouth {
+  text-align: center;
+  height: 10px;
+}
+#big-heart .pikachu .head .face .cachete {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  bottom: auto;
+  top: 38px;
+  background-color: #e64900;
+  z-index: 9;
+}
+#big-heart .pikachu .head .face .cachete.left {
+  right: auto;
+  left: 10px;
+}
+#big-heart .pikachu .head .face .cachete.right {
+  left: auto;
+  right: 10px;
+}
+#big-heart .pikachu .head .ears {
+  width: 20px;
+  height: 90px;
+  bottom: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+#big-heart .pikachu .head .ears.left {
+  right: auto;
+  left: 10px;
+}
+#big-heart .pikachu .head .ears.right {
+  left: auto;
+  right: 10px;
+}
+#big-heart .pikachu .head .ears .ears-inside {
+  top: auto;
+  height: 70px;
+  width: 30px;
+  border-radius: 50%;
+}
+#big-heart .pikachu .head .ears .ears-inside.right {
+  position: absolute;
+  left: -50%;
+}
+#big-heart .pikachu .body {
+  bottom: auto;
+  top: 80px;
+  height: 105px;
+  width: 130px;
+  border-radius: 80px 80px 40px 40px;
+  overflow: hidden;
+  z-index: 2;
+}
+#big-heart .pikachu .body .paw {
+  bottom: auto;
+  top: 50px;
+  height: 15px;
+  width: 30px;
+  z-index: 9;
+  border-bottom: 1px solid #e0a100;
+  border-top: 1px solid #FFFFFF;
+}
+#big-heart .pikachu .body .paw.left {
+  right: auto;
+  left: 15px;
+  border-radius: 0 50% 50% 0;
+}
+#big-heart .pikachu .body .paw.right {
+  left: auto;
+  right: 15px;
+  border-radius: 50% 0 0 50%;
+}
+#big-heart .pikachu .body .pika-heart {
+  width: 40px;
+  height: 40px;
+  bottom: auto;
+  top: 10px;
+  z-index: 8;
+  animation: beat 0.45s infinite;
+  -webkit-animation: beat 0.45s infinite;
+}
+#big-heart .pikachu .body .pika-heart::before, #big-heart .pikachu .body .pika-heart::after {
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 30px;
+  width: 50%;
+  height: 100%;
+  background: #e64900;
+  -moz-border-radius: 20px 20px 0 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+#big-heart .pikachu .body .pika-heart::after {
+  left: 0px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+#big-heart .pikachu .leg {
+  z-index: 1;
+  bottom: auto;
+  top: 172px;
+  height: 20px;
+  width: 30px;
+}
+#big-heart .pikachu .leg.left {
+  right: auto;
+  left: 20px;
+  border-radius: 80px 10px 80px 10px;
+}
+#big-heart .pikachu .leg.right {
+  left: auto;
+  right: 20px;
+  border-radius: 10px 80px 10px 80px;
+}
+#big-heart .pikachu .tail {
+  z-index: 1;
+  height: 40px;
+  width: 50px;
+  left: auto;
+  bottom: auto;
+  top: 70px;
+  border-radius: 10% 30%;
+}
+
+@keyframes pika-blink {
+  0% {
+    height: 14px;
+    top: 28px;
+  }
+  5% {
+    height: 2px;
+    top: 34px;
+  }
+  10% {
+    height: 14px;
+    top: 28px;
+  }
+  40% {
+    height: 14px;
+    top: 28px;
+  }
+  50% {
+    height: 2px;
+    top: 34px;
+  }
+  55% {
+    height: 14px;
+    top: 28px;
+  }
+  100% {
+    height: 14px;
+    top: 28px;
+  }
+}
+@keyframes moveUpCard {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 35%;
+  }
+}
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  25% {
+    background-position: 25%;
+  }
+  50% {
+    background-position: 50%;
+  }
+  75% {
+    background-position: 75%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+@keyframes moveUpWord {
+  0% {
+    top: 12%;
+  }
+  100% {
+    top: 0%;
+  }
+}
 .word-container {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-top: 100px;
+  margin: 100px auto;
+  position: fixed;
+  top: 12%;
+  animation: moveUpWord 1s steps(40, end) forwards;
+  animation-delay: 3.2s;
 }
 .word-container h1:nth-child(1) {
   color: #355c7d;
   font-family: "Fira Code", monospace;
   font-weight: 800;
   font-size: 20px;
-  margin: 0 0 0 35%;
+  margin: 0 auto auto 5%;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
-  width: 100%;
+  width: 1000px;
   animation: type 2s steps(40, end) forwards;
 }
 .word-container h1:nth-child(2) {
   opacity: 0;
   font-family: "Work Sans", sans-serif;
-  margin: 0 auto;
+  margin: 0 auto auto 5%;
   background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
   font-weight: 800;
   font-size: 100px;
   width: 100%;
+  text-align: left;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow: hidden;
+  white-space: nowrap;
   animation: shring-animation 2.2s steps(40, end) 2s forwards, blink 0.5s step-end infinite alternate;
 }
 
@@ -247,17 +469,17 @@ body {
     width: 0;
   }
   1% {
-    background-position: 0 0;
-    opacity: 1;
+    background-position: 25% 0;
+    opacity: 0.5;
     border-right: 1px solid orange;
   }
   50% {
-    background-position: 150px 0;
-    opacity: 1;
+    background-position: 75% 0;
+    opacity: 0.75;
     border-right: 1px solid orange;
   }
   100% {
-    background-position: 400px 0;
+    background-position: 100% 0;
     opacity: 1;
     border-right: 1px solid orange;
   }
@@ -276,6 +498,14 @@ body {
 @keyframes blink {
   50% {
     border-color: transparent;
+  }
+}
+@keyframes moveUpWord {
+  0% {
+    top: 12%;
+  }
+  100% {
+    top: 0%;
   }
 }
 

@@ -15,6 +15,7 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function showMessages() {
+  showMessageBubble(false)
   await delay(2000); 
   myMessage.textContent = "Anh oi...";
   // messageBubble.classList.add("show");
@@ -32,8 +33,7 @@ async function showMessages() {
 //Bubble message
 const messagesDictionary = { 
   inactiveMessage:[
-    "Ahihi ❤️",
-    "👀 👉👈",
+    "Ahihi <3",
     "Click to wake me up!",
     "My valentine?",
     "Where's my chocolate?"
@@ -41,14 +41,13 @@ const messagesDictionary = {
   noMessage:[ 
     "Ayeee... think again!",
     "Hay di qua!",
-    "👀",
     "Don't try. You have no options!",
     "This button is just for fun. Don't try lol!"
   ],
   yesMessage:[ 
     "Gooood choice!",
     "I know it!",
-    "Awwww ❤️"
+    "Awwww...~.~"
   ]
 };
 function showMessageBubble(isShow) {

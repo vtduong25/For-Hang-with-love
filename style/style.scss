@@ -552,7 +552,9 @@ body {
     font-family: monospace;
     font-size: 2em;
     span {
-      color: red;
+      color: #E62020;
+      overflow: hidden;
+      white-space: nowrap;
       font-weight: bolder;
       
     }

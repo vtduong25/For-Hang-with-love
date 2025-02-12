@@ -472,7 +472,9 @@ body {
   font-size: 2em;
 }
 #message-for-you.show .typing-demo span {
-  color: red;
+  color: #E62020;
+  overflow: hidden;
+  white-space: nowrap;
   font-weight: bolder;
 }
 

@@ -345,6 +345,7 @@ body {
   margin: 0;
   animation: 0.5s appear 0s forwards;
   font-family: "Comic Sans MS", cursive;
+  color: #E91E63;
 }
 #message-bubble.show .typing-indicator {
   will-change: transform;
@@ -470,6 +471,10 @@ body {
   font-family: monospace;
   font-size: 2em;
 }
+#message-for-you.show .typing-demo span {
+  color: red;
+  font-weight: bolder;
+}
 
 @keyframes typing {
   from {
@@ -481,7 +486,6 @@ body {
     border-color: transparent;
   }
 }
-
 #yes-no-options {
   visibility: hidden;
   width: 100%;

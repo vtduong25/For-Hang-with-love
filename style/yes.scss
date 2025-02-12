@@ -465,7 +465,7 @@ $color-suit4:#b82a32;
   width: 100%;
   margin: 100px auto;
   position: fixed;
-  top: 12%;
+  top: 10%;
   animation: moveUpWord 1s steps(40, end) forwards;
   animation-delay: 3.2s;
 
@@ -542,7 +542,7 @@ $color-suit4:#b82a32;
 
 @keyframes moveUpWord {
   0% {
-    top: 12%
+    top: 10%
   }
   100% {
     top: 0%

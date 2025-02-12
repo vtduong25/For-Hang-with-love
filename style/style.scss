@@ -399,6 +399,7 @@ body {
     margin: 0;
     animation: 0.5s appear 0s forwards;
     font-family: 'Comic Sans MS', cursive;
+    color: $dark-peach;
   }
 
   .typing-indicator {
@@ -550,6 +551,11 @@ body {
     border-right: 3px solid;
     font-family: monospace;
     font-size: 2em;
+    span {
+      color: red;
+      font-weight: bolder;
+      
+    }
   }
 }
 

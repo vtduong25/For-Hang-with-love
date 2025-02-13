@@ -437,7 +437,7 @@ body {
 #message-bubble {
   visibility: hidden;
   position: absolute;
-  top: -15%;
+  top: -40%;
   left: 70%;
   transform: translate(-26%, -53%);
   width: max-content;
@@ -546,7 +546,7 @@ body {
   
   .typing-demo {
     width: 35ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    animation: typing 2s steps(22), question-blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -579,7 +579,7 @@ body {
   }
 }
     
-@keyframes blink {
+@keyframes question-blink {
   50% {
     border-color: transparent
   }
@@ -664,47 +664,50 @@ body {
     background-position: 100%
   }}
 
-  @media (min-width: 1024px){
-    #message-bubble.show p {
-      font-size: 1.5em;
-    } 
-  }
+  // @media (min-width: 1024px){
+  //   #message-bubble.show p {
+  //     font-size: 1.5em;
+  //   } 
+  // }
   
   @media (min-width: 768px) and (max-width: 1024px) {
-    #message-for-you.show .typing-demo {
-      font-size: 40px;
-      font-weight: 600;
-    }
-  
-    #message-bubble.show p {
-      font-size: 1.2em;
-    }
-  
     .message .message-content {
-      font-size: 19px;
+      font-size: smaller;
     }
-  
     #message-for-you{
-      top: 40%;
-    }
-  
-    #yes-no-options.show .btn-responsive {
-      height: 10rem !important;
-      width: 18rem !important;
-      font: 3em Raleway, sans-serif !important;
-    }
-  
-    #yes-no-options.show #yesButton {
       top: 45%;
-    }
-  
-    #yes-no-options.show #noButton {
-      top: 45%;
+      font-size: initial;
+      .show .typing-demo {
+        // font-size: 40px;
+        font-weight: 600;
+      }
     }
     #message-bubble {
-      font-size: 20px;
+      // font-size: 20px;
       top: -40%;
+      // .show p {
+      //   font-size: 1.2em;
+      // }
+    }  
+    #yes-no-options.show {.btn-responsive {
+      // height: 2rem !important; //10
+      // width: 5rem !important; //18
+      // font: 3em Raleway, sans-serif !important;
+      height: 2rem !important;
+      width: 5rem !important;
+      font: 1em Raleway, sans-serif !important;
+      top:50%;
     }
+  
+    // #yesButton {
+    //   top: 45%;
+    // }
+  
+    // #noButton {
+    //   top: 45%;
+    // }
+  }
+    
   }
   
   @media (min-width: 320px) and (max-width: 766px) {
@@ -717,11 +720,12 @@ body {
       height: 2rem !important;
       width: 5rem !important;
       font: 1em Raleway, sans-serif !important;
+      top: 50% !important;
     }
   
-    #message-bubble.show p {
-      font-size: 1em;
-    }
+    // #message-bubble.show p {
+    //   font-size: 1em;
+    // }
   }
   
   @media (min-width: 0px) and (max-width: 329px) {
@@ -729,9 +733,9 @@ body {
       font-size: 14px;
     }
   
-    #message-bubble.show p {
-      font-size: 1em;
-    }
+    // #message-bubble.show p {
+    //   font-size: 1em;
+    // }
     #yes-no-options.show .btn-responsive {
       height: 1.5rem !important;
       width: 3.5rem !important;

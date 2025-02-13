@@ -709,24 +709,7 @@ body {
   }
     
   }
-  
-  // @media (min-width: 320px) and (max-width: 766px) {
-  //   #message-for-you.show .typing-demo {
-  //     font-size: 16px;
-  //   }
-  
-  
-  //   #yes-no-options.show .btn-responsive {
-  //     height: 2rem !important;
-  //     width: 6rem !important;
-  //     font: 1em Raleway, sans-serif !important;
-  //     top: 50% !important;
-  //   }
-  
-  //   // #message-bubble.show p {
-  //   //   font-size: 1em;
-  //   // }
-  // }
+   //iphone
   @media (min-width: 768px) and (max-width: 1024px) {
     #message-for-you.show .typing-demo {
       font-size: 40px;

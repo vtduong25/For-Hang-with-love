@@ -510,10 +510,10 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .word-container h1:nth-child(1) {
-    font-size: 16px;
+    font-size: 20px;
   }
   .word-container h1:nth-child(2) {
-    font-size: 7rem;
+    font-size: 90px;
   }
   .word-container {
     margin: 250px auto;
@@ -524,7 +524,7 @@ body {
     font-size: 18px;
   }
   .word-container h1:nth-child(2) {
-    font-size: 65px;
+    font-size: 60px;
   }
 }
 

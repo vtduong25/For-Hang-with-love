@@ -115,11 +115,11 @@ function createSnowflake() {
 setInterval(createSnowflake, 500);
 
 //back to index.html on browser refresh
-// window.addEventListener("load", function () {
-//   if (sessionStorage.getItem("reloaded")) {
-//       sessionStorage.removeItem("reloaded");
-//       window.location.href = "index.html";
-//   } else {
-//       sessionStorage.setItem("reloaded", "true");
-//   }
-// });
+window.addEventListener("load", function () {
+  if (sessionStorage.getItem("reloaded")) {
+      sessionStorage.removeItem("reloaded");
+      window.location.href = "index.html";
+  } else {
+      sessionStorage.setItem("reloaded", "true");
+  }
+});

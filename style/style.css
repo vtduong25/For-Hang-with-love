@@ -573,7 +573,9 @@ body {
     background-position: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+
+
+/*@media (min-width: 768px) and (max-width: 1024px) {
   .message .message-content {
     font-size: smaller;
   }
@@ -588,7 +590,7 @@ body {
     top: -40%;
   }
   #yes-no-options.show .btn-responsive {
-    height: 2rem !important;
+    height: 2rem !important; 
     width: 5.5rem !important;
     font: 1em Raleway, sans-serif !important;
     top: 50%;
@@ -624,13 +626,14 @@ body {
     top: -40%;
   }
 }
+
 @media (min-width: 0px) and (max-width: 329px) {
   #message-for-you.show .typing-demo {
     font-size: 14px;
   }
   #yes-no-options.show .btn-responsive {
     height: 1.5rem !important;
-    width: 3.5rem !important;
+    width: 4.5rem !important;
     font: 0.7em Raleway, sans-serif !important;
     top: 50% !important;
   }

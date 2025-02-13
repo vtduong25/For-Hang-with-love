@@ -18,8 +18,6 @@ flipCard.addEventListener('click',() => {
 
 const yesDictionary = { 
   image:[
-    // "https://i.giphy.com/Yz2NW6XR6EvmU4uWpa.webp",
-    "https://media1.giphy.com/media/Yz2NW6XR6EvmU4uWpa/giphy.webp",
     "https://media1.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.webp",
     "https://media4.giphy.com/media/eHWUyxudOQGCulzFFR/giphy.webp",
     "https://media0.giphy.com/media/W6o3MfP1ldc0K8sb38/giphy.webp",
@@ -117,11 +115,11 @@ function createSnowflake() {
 setInterval(createSnowflake, 500);
 
 //back to index.html on browser refresh
-window.addEventListener("load", function () {
-  if (sessionStorage.getItem("reloaded")) {
-      sessionStorage.removeItem("reloaded");
-      window.location.href = "index.html";
-  } else {
-      sessionStorage.setItem("reloaded", "true");
-  }
-});
+// window.addEventListener("load", function () {
+//   if (sessionStorage.getItem("reloaded")) {
+//       sessionStorage.removeItem("reloaded");
+//       window.location.href = "index.html";
+//   } else {
+//       sessionStorage.setItem("reloaded", "true");
+//   }
+// });

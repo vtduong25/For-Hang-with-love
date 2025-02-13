@@ -36,10 +36,25 @@
               <div class="heart__arms"></div>
               <div class="heart__legs"></div>
             </div>
+
+            <div id="message-bubble" >
+              <!-- <div class="chat-thread"> -->
+                  <div class="message">
+                      <div class="message-content">
+                      <div class="typing-indicator">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </div>
+                      <p id="my-message" >Ahihi ❤️</p>
+                      </div>
+                  </div>
+              <!-- </div> -->
+          </div>
         </div>
         
-        <div id="message-bubble" >
-            <!-- <div class="chat-thread"> -->
+        <!-- <div id="message-bubble" >
                 <div class="message">
                     <div class="message-content">
                     <div class="typing-indicator">
@@ -51,13 +66,12 @@
                     <p id="my-message" >Ahihi ❤️</p>
                     </div>
                 </div>
-            <!-- </div> -->
-        </div>
+        </div> -->
 
         <!-- class="button-wrapper"  -->
         <div id="yes-no-options">
-            <button id = "yesButton" onclick="nextPage()" onmouseover="bubbleMessage(messagesDictionary.yesMessage)">Yass :></button>
-            <button id="noButton" onmouseover="moveButton()" onclick="moveButton()">Nah >.<</button>
+            <button class = "btn-responsive" id = "yesButton" onclick="nextPage()" onmouseover="bubbleMessage(messagesDictionary.yesMessage)">Yass :></button>
+            <button class = "btn-responsive" id= "noButton" onmouseover="moveButton()" onclick="moveButton()">Nah >.<</button>
 
             <!-- <button id = "yesButton" onclick="nextPage()">Yasss 🐶</button>
             <button id="noButton" onmouseover="moveButton()" onclick="moveButton()">Nah 🫠</button> -->

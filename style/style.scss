@@ -436,10 +436,11 @@ body {
 
 #message-bubble {
   visibility: hidden;
-  position: fixed;
-  top: 25%;
-  left: 53%;
+  position: absolute;
+  top: -15%;
+  left: 70%;
   transform: translate(-26%, -53%);
+  width: max-content;
   &.show {
     visibility: visible;
     @include chat-thread-animation(0);
@@ -662,3 +663,81 @@ body {
   100% {
     background-position: 100%
   }}
+
+  @media (min-width: 1024px){
+    #message-bubble.show p {
+      font-size: 1.5em;
+    } 
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    #message-for-you.show .typing-demo {
+      font-size: 40px;
+      font-weight: 600;
+    }
+  
+    #message-bubble.show p {
+      font-size: 1.2em;
+    }
+  
+    .message .message-content {
+      font-size: 19px;
+    }
+  
+    #message-for-you{
+      top: 40%;
+    }
+  
+    #yes-no-options.show .btn-responsive {
+      height: 10rem !important;
+      width: 18rem !important;
+      font: 3em Raleway, sans-serif !important;
+    }
+  
+    #yes-no-options.show #yesButton {
+      top: 45%;
+    }
+  
+    #yes-no-options.show #noButton {
+      top: 45%;
+    }
+    #message-bubble {
+      font-size: 20px;
+      top: -40%;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 766px) {
+    #message-for-you.show .typing-demo {
+      font-size: 16px;
+    }
+  
+  
+    #yes-no-options.show .btn-responsive {
+      height: 2rem !important;
+      width: 5rem !important;
+      font: 1em Raleway, sans-serif !important;
+    }
+  
+    #message-bubble.show p {
+      font-size: 1em;
+    }
+  }
+  
+  @media (min-width: 0px) and (max-width: 329px) {
+    #message-for-you.show .typing-demo {
+      font-size: 14px;
+    }
+  
+    #message-bubble.show p {
+      font-size: 1em;
+    }
+    #yes-no-options.show .btn-responsive {
+      height: 1.5rem !important;
+      width: 3.5rem !important;
+      font: 0.7em Raleway, sans-serif !important;
+      top: 50% !important;
+    }
+  }
+  /*# sourceMappingURL=style.css.map */
+  

@@ -17,7 +17,7 @@
             <div class="heart__sun"></div>
             <div class="heart__shadow"></div>
             
-            <div id="heart" class="heart" onmouseover="showMessageBubble(true); bubbleMessage(messagesDictionary.inactiveMessage);" onmouseleave="showMessageBubble(false)">
+            <div id="heart" class="heart" onclick="showMessageBubble(true); bubbleMessage(messagesDictionary.inactiveMessage);" onmouseover="showMessageBubble(true); bubbleMessage(messagesDictionary.inactiveMessage);" onmouseleave="showMessageBubble(false)">
               <div class="heart__lines"></div>
               <svg xmlns="http://www.w3.org/2000/svg" class="heart__icon" width="5rem" height="5rem" viewBox="0 0 24 24" fill="none">
                 <defs>
@@ -54,7 +54,7 @@
 
         <!-- class="button-wrapper"  -->
         <div id="yes-no-options">
-            <button class = "btn-responsive" id = "yesButton" onclick="nextPage()" onmouseover="bubbleMessage(messagesDictionary.yesMessage)">Yass :></button>
+            <button class = "btn-responsive" id = "yesButton" onclick="nextPage(),bubbleMessage(messagesDictionary.yesMessage)" onmouseover="bubbleMessage(messagesDictionary.yesMessage)">Yass :></button>
             <button class = "btn-responsive" id= "noButton" onmouseover="moveButton()" onclick="moveButton()">Nah >.<</button>
         </div>
         <script src="./script/heart.js"></script>

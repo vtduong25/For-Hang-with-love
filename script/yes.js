@@ -12,6 +12,10 @@ wordMessage.addEventListener('animationend', () => {
   }, 2000);  // 2000 milliseconds = 2 seconds
 });
 
+flipCard.addEventListener('click',() => {
+
+})
+
 const yesDictionary = { 
   image:[
     // "https://i.giphy.com/Yz2NW6XR6EvmU4uWpa.webp",

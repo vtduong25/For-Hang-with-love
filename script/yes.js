@@ -16,15 +16,7 @@ let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 flipCard.addEventListener(touchEvent, function () {
   randomAnimatedMeme(yesDictionary.image);
-  // flipCard.classList.toggle("flipped");
-  
-  
-});
-flipCard.addEventListener(touchEvent, function () {
-  // randomAnimatedMeme(yesDictionary.image);
   flipCard.classList.toggle("flipped");
-  
-  
 });
 
 wordMessage.addEventListener('animationend', () => {

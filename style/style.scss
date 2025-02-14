@@ -379,22 +379,12 @@ body {
 
 //Bubble chat
 
-// Chat Bubble Animation Mixin
-// @mixin animation--fadedown($delay) {
-//   animation: fadeIn 1s ease-in-out;
-//   animation-iteration-count: 1;
-//   animation-fill-mode: forwards;
-//   animation-delay: #{$delay}s;
-// }
-
 @mixin chat-thread-animation($delay) {
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: #{$delay}s;
-  //@include animation--fadedown($delay);
-
   p {
     margin: 0;
     animation: 0.5s appear 0s forwards;
@@ -593,7 +583,6 @@ body {
 @mixin button-position($margin-left, $margin-right,$start-color,$mid-color,$end-color) {
   position: fixed;
   top: 55%;
-  // left: $left;
   margin-left: $margin-left;
   margin-right: $margin-right;
   b-webkit-appearance: none;  
@@ -649,12 +638,7 @@ body {
         -webkit-animation-fill-mode: forwards;
       }   
     }
-  }
-    
-
-    
-
-   
+  } 
 }  
 
 @keyframes gradient {
@@ -663,12 +647,6 @@ body {
   100% {
     background-position: 100%
   }}
-
-  // @media (min-width: 1024px){
-  //   #message-bubble.show p {
-  //     font-size: 1.5em;
-  //   } 
-  // }
   
   @media (min-width: 768px) and (max-width: 1024px) {
     .message .message-content {
@@ -683,29 +661,14 @@ body {
       }
     }
     #message-bubble {
-      // font-size: 20px;
       top: -40%;
-      // .show p {
-      //   font-size: 1.2em;
-      // }
     }  
     #yes-no-options.show {.btn-responsive {
-      // height: 2rem !important; //10
-      // width: 5rem !important; //18
-      // font: 3em Raleway, sans-serif !important;
       height: 2rem !important;
       width: 5.5rem !important;
       font: 1em Raleway, sans-serif !important;
       top:50%;
     }
-  
-    // #yesButton {
-    //   top: 45%;
-    // }
-  
-    // #noButton {
-    //   top: 45%;
-    // }
   }
     
   }
@@ -729,9 +692,9 @@ body {
     }
   
     #yes-no-options.show .btn-responsive {
-      height: 10rem !important;
-      width: 18rem !important;
-      font: 3em Raleway, sans-serif !important;
+      height: 5rem !important;
+      width: 12rem !important;
+      font: 2em Raleway, sans-serif !important;
     }
   
     #yes-no-options.show #yesButton {

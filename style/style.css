@@ -609,9 +609,9 @@ body {
     top: 40%;
   }
   #yes-no-options.show .btn-responsive {
-    height: 10rem !important;
-    width: 18rem !important;
-    font: 3em Raleway, sans-serif !important;
+    height: 5rem !important;
+    width: 12rem !important;
+    font: 2em Raleway, sans-serif !important;
   }
   #yes-no-options.show #yesButton {
     top: 45%;

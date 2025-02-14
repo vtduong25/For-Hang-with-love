@@ -27,6 +27,7 @@ body {
   font-size: 3rem;
   position: fixed;
   top: 35%;
+  cursor: pointer;
 }
 
 .flip-card-inner {
@@ -44,16 +45,15 @@ body {
 .flip-card-inner #pikaText {
   visibility: hidden;
   transform: rotateY(180deg);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-  align-items: left;
-}
-.flip-card:hover .flip-card-inner #pikaText {
-  visibility: visible;
   width: 100%;
   height: 100%;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card.flipped .flip-card-inner #pikaText {
+  visibility: visible;
 }
 
 .flip-card-front, .flip-card-back {

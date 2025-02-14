@@ -15,8 +15,9 @@ let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 // $('#hbs').on(touchEvent, someFunction);
 
 flipCard.addEventListener(touchEvent, function () {
-  flipCard.classList.toggle("flipped");
   randomAnimatedMeme(yesDictionary.image);
+  flipCard.classList.toggle("flipped");
+  
   
 });
 // flipCard.addEventListener("touchstart", function () {

@@ -145,7 +145,7 @@ function showMessageBubble(isShow) {
 
 //Option buttons
 function nextPage() {
-  window.location.href = "yes.html";
+  window.location.href = "for-you.html";
 }
 function bubbleMessage(messages) {
   var randomIndex = Math.floor(Math.random() * messages.length);

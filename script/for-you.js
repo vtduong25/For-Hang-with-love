@@ -119,7 +119,7 @@ setInterval(createSnowflake, 500);
 window.addEventListener("load", function () {
   if (sessionStorage.getItem("reloaded")) {
       sessionStorage.removeItem("reloaded");
-      window.location.href = "index.html";
+      window.location.href = "my-valentine.html";
   } else {
       sessionStorage.setItem("reloaded", "true");
   }

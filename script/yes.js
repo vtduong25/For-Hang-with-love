@@ -5,11 +5,14 @@ const pikaText = document.getElementById("pikaText");
 
 const bgAudio = document.getElementById('bg-music');
 
-// flipCard.addEventListener("click", function () {
-//   flipCard.classList.toggle("flipped");
-//   randomAnimatedMeme(yesDictionary.image);
+flipCard.addEventListener("click,touchstart", function () {
+  randomAnimatedMeme(yesDictionary.image);
   
-// });
+});
+flipCard.addEventListener("touchstart", function () {
+  randomAnimatedMeme(yesDictionary.image);
+  
+});
 
 wordMessage.addEventListener('animationend', () => {
   setTimeout(() => {

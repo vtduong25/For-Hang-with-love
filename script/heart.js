@@ -18,7 +18,6 @@ async function showMessages() {
   showMessageBubble(false)
   await delay(2000); 
   myMessage.textContent = "Anh oi...";
-  // messageBubble.classList.add("show");
   showMessageBubble(true);
 
   await delay(1000);

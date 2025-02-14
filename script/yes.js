@@ -5,16 +5,17 @@ const pikaText = document.getElementById("pikaText");
 
 const bgAudio = document.getElementById('bg-music');
 
+// flipCard.addEventListener("click", function () {
+//   flipCard.classList.toggle("flipped");
+//   randomAnimatedMeme(yesDictionary.image);
+  
+// });
+
 wordMessage.addEventListener('animationend', () => {
-  // flipCard.style.visibility="visible";
   setTimeout(() => {
     flipCard.classList.add('visible');
   }, 2000);  // 2000 milliseconds = 2 seconds
 });
-
-flipCard.addEventListener('click',() => {
-
-})
 
 const yesDictionary = { 
   image:[
@@ -35,6 +36,8 @@ const yesDictionary = {
 
 let lastIndex = -1; // Stores the last used index
 function randomAnimatedMeme(messages) {
+  flipCard.classList.toggle("flipped");
+  randomAnimatedMeme(yesDictionary.image);
   do {
     var randomIndex = Math.floor(Math.random() * messages.length);
   } while (randomIndex === lastIndex); // Repeat if it's the same as last time
@@ -52,8 +55,8 @@ function getRandomArbitrary(min, max) {
 // Function to create snowflake elements
 function createSnowflake() {
   // Get the window size (screenHeight and screenWidth)
-  var screenHeight = window.innerHeight;
-  var screenWidth = window.innerWidth;
+  var screenHeight = window.innerHeight- 150;
+  var screenWidth = window.innerWidth - 150;
 
   // Random start position
   var startLeft = getRandomArbitrary(0, screenWidth);
@@ -104,12 +107,10 @@ function createSnowflake() {
       easing: 'linear',  // Make the animation linear
       fill: 'forwards',  // Keep the final state after animation ends
   });
-
-  // Remove the snowflake after the animation ends
-  snow.addEventListener('animationend', function() {
-      snow.remove();  // Remove snowflake after animation ends
-  });
+  setTimeout(() => snow.remove(), timeRun);
+  
 }
+
 
 // Call createSnowflake every 500ms to generate new snowflakes
 setInterval(createSnowflake, 500);

@@ -8,12 +8,6 @@ const bgAudio = document.getElementById('bg-music');
 // First we check if you support touch, otherwise it's click:
 let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
-// // Then we bind via thát event. This way we only bind one event, instead of the two as below
-// flipCard.addEventListener(touchEvent, someFunction);
-
-// // or if you use jQuery:
-// $('#hbs').on(touchEvent, someFunction);
-
 flipCard.addEventListener(touchEvent, function () {
   randomAnimatedMeme(yesDictionary.image);
   flipCard.classList.toggle("flipped");

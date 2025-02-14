@@ -5,16 +5,25 @@ const pikaText = document.getElementById("pikaText");
 
 const bgAudio = document.getElementById('bg-music');
 
-flipCard.addEventListener("click", function () {
+// First we check if you support touch, otherwise it's click:
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
+// // Then we bind via thát event. This way we only bind one event, instead of the two as below
+// flipCard.addEventListener(touchEvent, someFunction);
+
+// // or if you use jQuery:
+// $('#hbs').on(touchEvent, someFunction);
+
+flipCard.addEventListener(touchEvent, function () {
   flipCard.classList.toggle("flipped");
   randomAnimatedMeme(yesDictionary.image);
   
 });
-flipCard.addEventListener("touchstart", function () {
-  flipCard.classList.toggle("flipped");
-  randomAnimatedMeme(yesDictionary.image);
+// flipCard.addEventListener("touchstart", function () {
+//   flipCard.classList.toggle("flipped");
+//   randomAnimatedMeme(yesDictionary.image);
   
-});
+// });
 
 wordMessage.addEventListener('animationend', () => {
   setTimeout(() => {
@@ -41,8 +50,6 @@ const yesDictionary = {
 
 let lastIndex = -1; // Stores the last used index
 function randomAnimatedMeme(messages) {
-  // flipCard.classList.toggle("flipped");
-  randomAnimatedMeme(yesDictionary.image);
   do {
     var randomIndex = Math.floor(Math.random() * messages.length);
   } while (randomIndex === lastIndex); // Repeat if it's the same as last time
@@ -121,11 +128,11 @@ function createSnowflake() {
 setInterval(createSnowflake, 500);
 
 //back to index.html on browser refresh
-window.addEventListener("load", function () {
-  if (sessionStorage.getItem("reloaded")) {
-      sessionStorage.removeItem("reloaded");
-      window.location.href = "index.html";
-  } else {
-      sessionStorage.setItem("reloaded", "true");
-  }
-});
+// window.addEventListener("load", function () {
+//   if (sessionStorage.getItem("reloaded")) {
+//       sessionStorage.removeItem("reloaded");
+//       window.location.href = "index.html";
+//   } else {
+//       sessionStorage.setItem("reloaded", "true");
+//   }
+// });

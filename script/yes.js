@@ -5,11 +5,13 @@ const pikaText = document.getElementById("pikaText");
 
 const bgAudio = document.getElementById('bg-music');
 
-flipCard.addEventListener("click,touchstart", function () {
+flipCard.addEventListener("click", function () {
+  flipCard.classList.toggle("flipped");
   randomAnimatedMeme(yesDictionary.image);
   
 });
 flipCard.addEventListener("touchstart", function () {
+  flipCard.classList.toggle("flipped");
   randomAnimatedMeme(yesDictionary.image);
   
 });
@@ -39,7 +41,7 @@ const yesDictionary = {
 
 let lastIndex = -1; // Stores the last used index
 function randomAnimatedMeme(messages) {
-  flipCard.classList.toggle("flipped");
+  // flipCard.classList.toggle("flipped");
   randomAnimatedMeme(yesDictionary.image);
   do {
     var randomIndex = Math.floor(Math.random() * messages.length);

@@ -2,7 +2,7 @@
 
 //palette
 $green: #76D7C4;
-$dark-peach: #E91E63;
+$dark-peach: #72BF78;//#E91E63;
 $light-peach: #F1948A;
 $peach: #FF8A65;
 $sand: #fceeb5;
@@ -12,10 +12,11 @@ $black: #000038;
 $white: #fff;
 $red: #ff7d66;
 $yellow: #f5fccd;
-$pink: #f58bc0;
-$bubblePink:#FFEBEE;
+$pink: #FFC0CB;//#FFEBEE;//#f58bc0;
+$bubblePink:#D3EE98;//#FFEBEE;
 $mediumPink:darken($bubblePink,3%);//#F06292;
 $grey: darken($bubblePink,5%);//#bbb;
+$sunColor: #FFD700;
 
 //heart
 html {
@@ -186,7 +187,7 @@ body {
   }
   &__wrapper--active {
     #{$component-class}__sun {
-      background-color: $yellow;
+      background-color: $sunColor;
     }
     #{$component-class}__shadow {
       @keyframes shadow {
@@ -543,7 +544,7 @@ body {
     font-family: monospace;
     font-size: 2em;
     span {
-      color: #E62020;
+      color: $red;
       overflow: hidden;
       white-space: nowrap;
       font-weight: bolder;

@@ -9,7 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  background-color: #FFEBEE !important;
+  background-color: #D0E7D2 !important;
 }
 $color-card:#f5f5dc;
 $color-body:#D2B48C;
@@ -66,8 +66,7 @@ $color-suit4:#b82a32;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     border-radius:8px;
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    background-color: rgba(98,210,141,0.88);
     background-size: 66px 66px;
     // #pikaText{height:0;transform:rotateY(180deg)}
     #pikaText{visibility: hidden; transform:rotateY(180deg); width: 100%;
@@ -101,9 +100,8 @@ $color-suit4:#b82a32;
   
   .flip-card-front {
     top: 0%;
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
+    background-color: rgba(98,210,141,0.88);
+    background-image: linear-gradient( 109.6deg,  rgba(98,210,141,0.88) 11.2%, rgba(234,245,45,0.79) 88% );
     box-shadow: 5px 5px 15px #bbb; /* Shadow */
   }
   
@@ -472,7 +470,7 @@ $color-suit4:#b82a32;
   animation-delay: 3.2s;
 
   h1:nth-child(1) {
-    color: #355c7d;
+    color: #116D6E;
     font-family: 'Fira Code', monospace;
     font-weight: 800;
     font-size: 20px;
@@ -488,7 +486,10 @@ $color-suit4:#b82a32;
     opacity: 0;
     font-family: "Work Sans", sans-serif;
     margin: 0 auto auto 5%;
-    background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
+    // background-image: linear-gradient( 91deg,  rgba(72,154,78,1) 5.2%, #D99D81 95.9% );
+    // background-image: linear-gradient( 68.6deg,  rgba(79,183,131,1) 14.4%, rgba(254,235,151,1) 92.7% );
+    // background-image: linear-gradient( 91deg,  rgba(72,154,78,1) 5.2%, rgba(251,206,70,1) 95.9% );
+    background-image: linear-gradient( 102.1deg,  rgba(96,221,142,1) 8.7%, rgba(24,138,141,1) 88.1% );
     font-weight: 800;
     font-size: 100px;  
     width: 100%;

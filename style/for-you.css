@@ -4,7 +4,7 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  background-color: #FFEBEE !important;
+  background-color: #D0E7D2 !important;
 }
 
 /******FLIP******/
@@ -38,8 +38,7 @@ body {
   transition: transform 0.6s;
   transform-style: preserve-3d;
   border-radius: 8px;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  background-color: rgba(98, 210, 141, 0.88);
   background-size: 66px 66px;
 }
 .flip-card-inner #pikaText {
@@ -68,8 +67,8 @@ body {
 
 .flip-card-front {
   top: 0%;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  background-color: rgba(98, 210, 141, 0.88);
+  background-image: linear-gradient(109.6deg, rgba(98, 210, 141, 0.88) 11.2%, rgba(234, 245, 45, 0.79) 88%);
   box-shadow: 5px 5px 15px #bbb; /* Shadow */
 }
 
@@ -435,7 +434,7 @@ body {
   animation-delay: 3.2s;
 }
 .word-container h1:nth-child(1) {
-  color: #355c7d;
+  color: #116D6E;
   font-family: "Fira Code", monospace;
   font-weight: 800;
   font-size: 20px;
@@ -450,7 +449,7 @@ body {
   opacity: 0;
   font-family: "Work Sans", sans-serif;
   margin: 0 auto auto 5%;
-  background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
+  background-image: linear-gradient(102.1deg, rgb(96, 221, 142) 8.7%, rgb(24, 138, 141) 88.1%);
   font-weight: 800;
   font-size: 100px;
   width: 100%;

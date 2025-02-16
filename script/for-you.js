@@ -21,18 +21,21 @@ wordMessage.addEventListener('animationend', () => {
 
 const yesDictionary = { 
   image:[
-    "https://media1.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.webp",
-    "https://media4.giphy.com/media/eHWUyxudOQGCulzFFR/giphy.webp",
-    "https://media0.giphy.com/media/W6o3MfP1ldc0K8sb38/giphy.webp",
-    "https://media2.giphy.com/media/SvvfK2dco188Wk4ZTq/giphy.webp",
-    "https://media2.giphy.com/media/ZCSPaG9pPpSJEBiOUF/giphy.webp",
-    "https://media2.giphy.com/media/QvvFkKfqwq82NniaIW/giphy.webp",
-    "https://media4.giphy.com/media/lPM06f2zvk94jBAzlP/giphy.webp",
-    "https://media3.giphy.com/media/eltZvfFAW9f9HI1foH/giphy.webp",
-    "https://media1.giphy.com/media/cLS1cfxvGOPVpf9g3y/giphy.webp",
-    "https://media4.giphy.com/media/m9XLXeXcVxlZX0Mfps/giphy.webp",
-    "https://media1.giphy.com/media/js0lEnHUd26FSJ2lyu/giphy.webp",
-    "https://media1.giphy.com/media/W3fbjOoLVKHGYHlJ4z/giphy.webp"
+    "https://media0.giphy.com/media/6NCKCvwfEINL8POnbF/giphy.webp",
+    "https://media4.giphy.com/media/UnF62I2Zn8X8mGEehC/giphy.webp",
+    "https://media0.giphy.com/media/FPsI4PHht33EjDPtoV/giphy.webp",
+    "https://media0.giphy.com/media/cnd75q7g4oSEmeEHKU/giphy.webp",
+    "https://media3.giphy.com/media/l0bSHkRkIYB8zcwBF8/giphy.webp",
+    "https://media4.giphy.com/media/gtSQbjYqoDbsA2j0jg/giphy.webp",
+    "https://media0.giphy.com/media/qqBP8Xvn2vtklP06pI/giphy.webp",
+    "https://media3.giphy.com/media/p34MlXlU4jx7fvWTmT/200.webp",
+    "https://media3.giphy.com/media/a7YBatpbXSzxbrSkvM/giphy.webp",
+    "https://media0.giphy.com/media/sXPHBN29M86UwTCAh7/giphy.webp",
+    "https://media2.giphy.com/media/AQmRoVFBa1DDQeXprE/giphy.webp",
+    "https://media0.giphy.com/media/KrqmzLuynW3zsbpXGt/giphy.webp",
+    "https://media3.giphy.com/media/V460n6dwvVHrpJQPF9/giphy.webp",
+    "https://media4.giphy.com/media/9Mv6b3qFrjimE5A2EP/giphy.webp",
+    "https://media4.giphy.com/media/3chqOFSQ58aSVTiZzi/giphy.webp"
   ]
 };
 
@@ -79,7 +82,7 @@ function createSnowflake() {
   // Style the snowflake with random properties
   snow.classList.add('snow-item', 'fa', 'fa-heart');
   snow.style.position = 'absolute';
-  snow.style.color = '#ff0000';  // Heart color
+  snow.style.color = '#79AC78';  // Heart color
   snow.style.display = 'block';
   snow.style.top = '0px';
   snow.style.left = startLeft + 'px';
@@ -115,7 +118,7 @@ function createSnowflake() {
 // Call createSnowflake every 500ms to generate new snowflakes
 setInterval(createSnowflake, 500);
 
-//back to index.html on browser refresh
+// //back to index.html on browser refresh
 window.addEventListener("load", function () {
   if (sessionStorage.getItem("reloaded")) {
       sessionStorage.removeItem("reloaded");

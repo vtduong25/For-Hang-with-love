@@ -17,7 +17,7 @@ function delay(ms) {
 async function showMessages() {
   showMessageBubble(false)
   await delay(2000); 
-  myMessage.textContent = "Anh oi...";
+  myMessage.textContent = "Chi oi...";
   showMessageBubble(true);
 
   await delay(1000);
@@ -45,16 +45,16 @@ const messagesDictionary = {
     "Wo xihuan ni",
     "Are you French? Because Eiffel for you.",
     "Are you a keyboard? Cause you’re my type.",
-    "Are you a PT? Cause I am pleased to tease u.",
-    "You are T, I am V, together we'll make a TV show :)",
+    "Are you a lock? Cause I am your key..",
+    "My love across the ocean?",
     "Singles mingle",
     "V saw me idle for 6 hours to fix the bubble messages",
     "I am cool and you know that.",
     "Can you get me the address to your <3 key?",
-    "Troooooy oyyy!",
+    "Chiiii oyyy!",
     "Sad life, V said hehe...",
     "Always with you",
-    "This is how an engineer confesses..",
+    "This is how you know an engineer falls in love..",
     "The one and only V you know hehehe",
     "The almighty silly is me :)", 
     "....",
@@ -65,7 +65,10 @@ const messagesDictionary = {
     "I don't bite >.<",
     "We are all in this together.",
     "What are you waiting for?",
-    "Are you ready for it?"
+    "Are you ready for it?",
+    "I miss you!",
+    "Coming soon...",
+    "Up and run"
   ],
   noMessage:[ 
     "Ayeee... think again!",
@@ -77,21 +80,22 @@ const messagesDictionary = {
     "Again?",
     "Maybe next time?",
     "Can't say yes, can't click no either :P",
-    "Ayeee, anh oi, how dare you?",
+    "Ayeee, chi oi, how dare you?",
     "Heart beats left, click the left button :)",
     "Hah, don't you dare?",
     "I know you would choose it",
     "Your fortune cookie says 'good luck'",
     "I know what you are trying lol.",
-    "I can sense it, anh",
+    "I can sense it, chi.",
+    "Thought you love me T.T",
     "Button for display only.",
     "Catch me if you can...",
     "Destiny doesn't support you today.",
     "Be careful, it's a tick bomb.",
     "Don't worry, you can't run away..",
     "I have a dictionary of messages, take your time.",
-    "Ayeeeeee, anh ooooooi!",
-    "Ri oi, anh hay di qua'",
+    "Ayeeeeee, chi ooooooi!",
+    "Chi oi, whyy?'",
     "Ayeee, are you sure? Think again!",
     "I know lol!",
     "To the left...",
@@ -107,7 +111,6 @@ const messagesDictionary = {
     "I know it!",
     "Awwww...~.~",
     "Sun sets on the east today?",
-    "Wisconsin with no snow today?",
     "LOL?",
     "Lol, finally!",
     "Surpriseee!!!",
@@ -132,7 +135,8 @@ const messagesDictionary = {
     "Guess I’ll just vibe with a happy smile!",
     "We don't talk about Bruno-no-no-no ....",
     "Lol Mars is falling down, I am sure.",
-    "My first Valentine hehehe"
+    "My first Valentine hehehe",
+    "I know you love me :)"
   ]
 };
 function showMessageBubble(isShow) {
@@ -147,10 +151,15 @@ function showMessageBubble(isShow) {
 function nextPage() {
   window.location.href = "for-you.html";
 }
+
+let currentIndex = -1;
 function bubbleMessage(messages) {
-  var randomIndex = Math.floor(Math.random() * messages.length);
+  do { var randomIndex = Math.floor(Math.random() * messages.length);}
+  while (currentIndex === randomIndex);
+  currentIndex = randomIndex;
   myMessage.textContent = messages[randomIndex];
 }
+
 function moveButton() {
   bubbleMessage(messagesDictionary.noMessage);
 
